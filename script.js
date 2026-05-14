@@ -5,7 +5,7 @@
 
 // ---- CONFIG ----
 // Replace this with your deployed Google Apps Script Web App URL
-const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbz-z4091aI0-9VV2qFG33unQumi2rMmaH1DbrRpkzscm74ImoAtqXLC4cOrxKR7RQiLeQ/exec';
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyFSYkPwafe7ZPVmMpP92f5R46lypHUxg9p7V7BO681mB81q7BtBAMo1cEvWU6Ak2aKTQ/exec';
 
 // ---- Particles ----
 function initParticles() {
