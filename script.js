@@ -51,6 +51,7 @@ function validate() {
         { id: 'phone', msg: 'Phone number is required' },
         { id: 'city', msg: 'City is required' },
         { id: 'address', msg: 'Address is required' },
+        { id: 'pincode', msg: 'PIN Code is required' },
         { id: 'instagram', msg: 'Instagram handle is required' }
     ];
 
@@ -75,6 +76,14 @@ function validate() {
         valid = false;
     }
 
+    // PIN Code format (6 digits)
+    const pincode = document.getElementById('pincode');
+    if (pincode.value.trim() && !/^[0-9]{6}$/.test(pincode.value.trim())) {
+        pincode.classList.add('error');
+        document.getElementById('pincodeError').textContent = 'Enter a valid 6-digit PIN code';
+        valid = false;
+    }
+
     return valid;
 }
 
@@ -92,6 +101,7 @@ document.getElementById('creatorForm').addEventListener('submit', async (e) => {
         phone: document.getElementById('phone').value.trim(),
         city: document.getElementById('city').value.trim(),
         address: document.getElementById('address').value.trim(),
+        pincode: document.getElementById('pincode').value.trim(),
         instagram: '@' + document.getElementById('instagram').value.trim().replace(/^@/, ''),
         followers: document.getElementById('followers').value || 'Not specified',
         niches: document.getElementById('selectedNiches').value || 'Not specified',
