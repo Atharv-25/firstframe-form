@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firstframe X Dream Beauty — Creator Registration</title>
+    <meta name="description" content="Register as a content creator with Firstframe X Dream Beauty. Share your details and join our exclusive creator network.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating particles background -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Main Container -->
+    <div class="page-wrapper">
+
+        <!-- Header / Brand Bar -->
+        <header class="brand-header">
+            <div class="brand-title">
+                <span class="brand-name">First Frame</span>
+                <span class="brand-x">×</span>
+                <span class="brand-name">Dream Beauty</span>
+            </div>
+            <p class="brand-subtitle">CREATOR NETWORK</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-heading">Join Our <em>Creator</em> Community</h1>
+            <p class="hero-description">
+                We're looking for talented content creators to collaborate with leading beauty brands. 
+                Fill in your details below and we'll reach out with exciting opportunities.
+            </p>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-card">
+                <div class="form-header">
+                    <span class="form-step-badge">Registration Form</span>
+                    <h2 class="form-title">Creator Details</h2>
+                    <p class="form-desc">All fields marked with <span class="required-star">*</span> are required</p>
+                </div>
+
+                <form id="creatorForm" class="creator-form" novalidate>
+                    <!-- Personal Info -->
+                    <div class="form-group-title">
+                        <span class="group-number">01</span>
+                        <span class="group-label">Personal Information</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required-star">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="field-error" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required-star">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            <span class="field-error" id="emailError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required-star">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                            <span class="field-error" id="phoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City <span class="required-star">*</span></label>
+                            <input type="text" id="city" name="city" placeholder="e.g. Mumbai" required>
+                            <span class="field-error" id="cityError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">Full Address <span class="required-star">*</span></label>
+                        <span class="field-hint">📦 This address will be used for product delivery</span>
+                        <textarea id="address" name="address" rows="3" placeholder="House/Flat No., Street, Landmark, City, State, PIN Code" required></textarea>
+                        <span class="field-error" id="addressError"></span>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="form-group-title">
+                        <span class="group-number">02</span>
+                        <span class="group-label">Social Media</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="instagram">Instagram Handle <span class="required-star">*</span></label>
+                            <div class="input-prefix-wrap">
+                                <span class="input-prefix">@</span>
+                                <input type="text" id="instagram" name="instagram" placeholder="yourhandle" required>
+                            </div>
+                            <span class="field-error" id="instagramError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="followers">Follower Count</label>
+                            <select id="followers" name="followers">
+                                <option value="" disabled selected>Select range</option>
+                                <option value="0-1K">0 — 1K</option>
+                                <option value="1K-5K">1K — 5K</option>
+                                <option value="5K-10K">5K — 10K</option>
+                                <option value="10K-50K">10K — 50K</option>
+                                <option value="50K-100K">50K — 100K</option>
+                                <option value="100K+">100K+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Niche -->
+                    <div class="form-group-title">
+                        <span class="group-number">03</span>
+                        <span class="group-label">Content Niche</span>
+                    </div>
+
+                    <div class="niche-tags" id="nicheTags">
+                        <button type="button" class="niche-tag" data-value="Beauty">Beauty</button>
+                        <button type="button" class="niche-tag" data-value="Fashion">Fashion</button>
+                        <button type="button" class="niche-tag" data-value="Skincare">Skincare</button>
+                        <button type="button" class="niche-tag" data-value="Lifestyle">Lifestyle</button>
+                        <button type="button" class="niche-tag" data-value="Food">Food</button>
+                        <button type="button" class="niche-tag" data-value="Fitness">Fitness</button>
+                        <button type="button" class="niche-tag" data-value="Tech">Tech</button>
+                        <button type="button" class="niche-tag" data-value="Travel">Travel</button>
+                        <button type="button" class="niche-tag" data-value="UGC">UGC</button>
+                        <button type="button" class="niche-tag" data-value="Unboxing">Unboxing</button>
+                    </div>
+                    <input type="hidden" id="selectedNiches" name="niches">
+
+                    <!-- Submit -->
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Submit Registration</span>
+                        <span class="btn-loader" id="btnLoader">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Success Overlay -->
+        <div class="success-overlay" id="successOverlay">
+            <div class="success-card">
+                <div class="success-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h2>You're In! 🎉</h2>
+                <p>Thank you for registering. We'll reach out to you soon with collaboration opportunities.</p>
+                <button class="submit-btn" onclick="closeSuccess()" style="margin-top: 1.5rem;">Submit Another</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>© 2026 Firstframe × Dream Beauty — All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
