@@ -60,37 +60,12 @@
                             <span class="field-error" id="fullNameError"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address <span class="required-star">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                            <span class="field-error" id="emailError"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number <span class="required-star">*</span></label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
-                            <span class="field-error" id="phoneError"></span>
-                        </div>
-                        <div class="form-group">
                             <label for="city">City <span class="required-star">*</span></label>
                             <input type="text" id="city" name="city" placeholder="e.g. Mumbai" required>
                             <span class="field-error" id="cityError"></span>
                         </div>
                     </div>
 
-                    <div class="form-group full-width">
-                        <label for="address">Full Address <span class="required-star">*</span></label>
-                        <span class="field-hint-alert">📦 This address will be used for product delivery</span>
-                        <textarea id="address" name="address" rows="3" placeholder="House/Flat No., Street, Landmark, City, State" required></textarea>
-                        <span class="field-error" id="addressError"></span>
-                    </div>
-
-                    <div class="form-group" style="max-width: 280px; margin-bottom: 1.25rem;">
-                        <label for="pincode">PIN Code <span class="required-star">*</span></label>
-                        <input type="text" id="pincode" name="pincode" placeholder="e.g. 400058" maxlength="6" pattern="[0-9]{6}" required>
-                        <span class="field-error" id="pincodeError"></span>
-                    </div>
 
                     <!-- Social Media -->
                     <div class="form-group-title">
@@ -100,12 +75,9 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="instagram">Instagram Handle <span class="required-star">*</span></label>
-                            <div class="input-prefix-wrap">
-                                <span class="input-prefix">@</span>
-                                <input type="text" id="instagram" name="instagram" placeholder="yourhandle" required>
-                            </div>
-                            <span class="field-error" id="instagramError"></span>
+                            <label for="instagramLink">Instagram Link <span class="required-star">*</span></label>
+                            <input type="url" id="instagramLink" name="instagramLink" placeholder="https://instagram.com/yourhandle" required>
+                            <span class="field-error" id="instagramLinkError"></span>
                         </div>
                         <div class="form-group">
                             <label for="followers">Follower Count</label>

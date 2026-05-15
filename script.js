@@ -5,7 +5,7 @@
 
 // ---- CONFIG ----
 // Replace this with your deployed Google Apps Script Web App URL
-const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyFSYkPwafe7ZPVmMpP92f5R46lypHUxg9p7V7BO681mB81q7BtBAMo1cEvWU6Ak2aKTQ/exec';
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbw0iSzxXxK22YrskjxcHTIacJVQbJ5UvQGiuLfytHUqDoustwUtKgnGLoVMRtVWevcj/exec';
 
 // ---- Particles ----
 function initParticles() {
@@ -47,12 +47,8 @@ function validate() {
     let valid = true;
     const fields = [
         { id: 'fullName', msg: 'Name is required' },
-        { id: 'email', msg: 'Valid email is required' },
-        { id: 'phone', msg: 'Phone number is required' },
         { id: 'city', msg: 'City is required' },
-        { id: 'address', msg: 'Address is required' },
-        { id: 'pincode', msg: 'PIN Code is required' },
-        { id: 'instagram', msg: 'Instagram handle is required' }
+        { id: 'instagramLink', msg: 'Instagram link is required' }
     ];
 
     fields.forEach(f => {
@@ -68,19 +64,11 @@ function validate() {
         }
     });
 
-    // Email format
-    const email = document.getElementById('email');
-    if (email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        email.classList.add('error');
-        document.getElementById('emailError').textContent = 'Enter a valid email';
-        valid = false;
-    }
-
-    // PIN Code format (6 digits)
-    const pincode = document.getElementById('pincode');
-    if (pincode.value.trim() && !/^[0-9]{6}$/.test(pincode.value.trim())) {
-        pincode.classList.add('error');
-        document.getElementById('pincodeError').textContent = 'Enter a valid 6-digit PIN code';
+    // Instagram link format (simple check)
+    const instagramLink = document.getElementById('instagramLink');
+    if (instagramLink.value.trim() && !/^https?:\/\//i.test(instagramLink.value.trim())) {
+        instagramLink.classList.add('error');
+        document.getElementById('instagramLinkError').textContent = 'Enter a valid URL (starting with http:// or https://)';
         valid = false;
     }
 
@@ -97,11 +85,8 @@ document.getElementById('creatorForm').addEventListener('submit', async (e) => {
 
     const data = {
         fullName: document.getElementById('fullName').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
         city: document.getElementById('city').value.trim(),
-        address: document.getElementById('address').value.trim() + ' - ' + document.getElementById('pincode').value.trim(),
-        instagram: '@' + document.getElementById('instagram').value.trim().replace(/^@/, ''),
+        instagramLink: document.getElementById('instagramLink').value.trim(),
         followers: document.getElementById('followers').value || 'Not specified',
         niches: document.getElementById('selectedNiches').value || 'Not specified',
         timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })

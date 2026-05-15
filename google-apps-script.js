@@ -25,8 +25,7 @@ function doPost(e) {
       sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
       sheet.setName("Creators");
       sheet.appendRow([
-        "Timestamp", "Full Name", "Email", "Phone",
-        "City", "Address", "Instagram", "Followers", "Niches"
+        "Timestamp", "Name", "City", "Instagram Link", "Follower Count", "Niche"
       ]);
     }
 
@@ -43,11 +42,8 @@ function doPost(e) {
     sheet.appendRow([
       data.timestamp || new Date().toLocaleString(),
       data.fullName || "",
-      data.email || "",
-      data.phone || "",
       data.city || "",
-      data.address || "",
-      data.instagram || "",
+      data.instagramLink || "",
       data.followers || "",
       data.niches || ""
     ]);
